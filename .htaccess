@@ -1,0 +1,23 @@
+php_flag display_errors On
+Options +FollowSymlinks
+#ErrorDocument 404 http://www.porkivore.com/
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+RewriteRule ^bracket$ bracket_form
+
+#301 redirects
+rewriterule ^contact.html(.*)$ http://www.tenderchoicepork.com/contact$1 [r=301,nc]
+rewriterule ^contests.html(.*)$ http://www.tenderchoicepork.com/promotions$1 [r=301,nc]
+rewriterule ^faq.html(.*)$ http://www.tenderchoicepork.com/resources/faq$1 [r=301,nc]
+rewriterule ^FindStores.aspx(.*)$ http://www.tenderchoicepork.com/locator$1 [r=301,nc]
+rewriterule ^indexRecip.html(.*)$ http://www.tenderchoicepork.com/recipes$1 [r=301,nc]
+rewriterule ^nutrition.html(.*)$ http://www.tenderchoicepork.com/resources/nutrition$1 [r=301,nc]
+rewriterule ^story.html(.*)$ http://www.tenderchoicepork.com/story$1 [r=301,nc]
+rewriterule ^testimonials.html(.*)$ http://www.tenderchoicepork.com/$1 [r=301,nc]
+
+
